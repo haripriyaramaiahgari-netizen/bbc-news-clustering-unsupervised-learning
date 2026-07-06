@@ -135,7 +135,10 @@ B.Tech – Computer Science and Engineering (Artificial Intelligence & Machine L
 
 SRM Institute of Science and Technology – Ramapuram
 
+**Abhrodwip Saha**
+B.Tech - Electronics and Communication Engineering 
 
+Vellore Institute of Technology - Vellore Campus
 
 ---
 
