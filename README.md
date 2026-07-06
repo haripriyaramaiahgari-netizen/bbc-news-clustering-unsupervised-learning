@@ -1,91 +1,146 @@
-# NLP-RNN-KMeans-Project
+# BBC News Articles Clustering using Unsupervised Learning
 
-#  NLP Projects: IMDB Sentiment Classification & BBC News Clustering
+## 📌 Project Overview
 
-This repository contains two end-to-end Natural Language Processing (NLP) mini-projects implemented using Deep Learning and Machine Learning techniques. Both projects are focused on real-world text datasets to demonstrate text classification and clustering.
+This project demonstrates the application of **Unsupervised Machine Learning** and **Natural Language Processing (NLP)** to automatically cluster BBC news articles into meaningful groups without using predefined labels.
 
----
-
-## 📘 Project 1: IMDB Movie Review Sentiment Classification
-
-### 🔍 Objective:
-Build a sentiment analysis model that classifies IMDB movie reviews as **positive** or **negative** using a **Recurrent Neural Network (RNN)**.
-
-### 🛠️ Key Steps:
-- Used TensorFlow Datasets (`imdb_reviews`)
-- Preprocessed text using `TextVectorization`
-- Built an RNN model with embedding and recurrent layers
-- Trained on 25,000 reviews, validated on 25,000
-- Predicted sentiment of custom input reviews
+The project uses three different text vectorization techniques and applies the **K-Means clustering algorithm** to discover hidden patterns within news articles. The clustering performance is evaluated using the **Silhouette Coefficient**, and the results are visualized using bar charts and PCA scatter plots.
 
 ---
 
-## 📰 Project 2: BBC News Articles Clustering
+## 🎯 Objective
 
-### 🔍 Objective:
-Perform topic clustering on BBC News article summaries using 3 vectorization methods and evaluate the clustering effectiveness.
+- Read BBC news articles from multiple categories.
+- Combine all articles into a single dataset.
+- Perform advanced text preprocessing.
+- Convert text into numerical vectors using three vectorization techniques.
+- Cluster articles into five groups using K-Means.
+- Compare clustering performance using the Silhouette Score.
+- Visualize clustering results using bar plots and PCA.
+
 ---
-## 📂 Folder Structure
 
-NLP-Projects/
+## 📂 Project Structure
 
-├── NLP_Project_IMDB_BBC.ipynb # Final combined notebook
+```
+BBC-News-Clustering/
 
-├── BBC_News_Articles/ # Folder with 5 subfolders (news categories)
-
-├── README.md
-
+├── NLP_Project.ipynb
+├── BBC_News_Articles/
+│   ├── business/
+│   ├── entertainment/
+│   ├── politics/
+│   ├── sport/
+│   └── tech/
 ├── BBCNewsArticles.csv
-
-└── BBCNewsArticlesClustered.csv # Clustered output
-
----
-
-### 🛠️ Key Steps:
-- Loaded `.txt` articles from 5 news categories
-- Cleaned and preprocessed the text
-- Applied:
-  - **Presence/Absence Vectorization**
-  - **Count Vectorization**
-  - **TF-IDF Vectorization**
-- Clustered using **KMeans (k=5)**
-- Evaluated with **Silhouette Score**
-- Saved clustered data to CSV
+├── BBCNewsArticlesClustered.csv
+├── README.md
+```
 
 ---
 
-## 🧪 Tools & Technologies
-- Python  
-- TensorFlow / Keras  
-- Scikit-learn  
-- Matplotlib / Seaborn  
-- Jupyter Notebook  
+## 🛠️ Technologies Used
+
+- Python
+- Scikit-learn
+- NLTK
+- Pandas
+- NumPy
+- Matplotlib
+- Jupyter Notebook
 
 ---
 
-## ✅ Final Conclusion
+## 📋 Project Workflow
 
-This project demonstrates the practical application of Deep Learning and NLP in real-world problems like sentiment classification and topic modeling.  
-- **IMDB sentiment model** achieved good accuracy using a simple RNN and vectorization pipeline.  
-- **BBC news clustering** revealed that **TF-IDF** vectorization performed best in grouping semantically similar documents based on Silhouette Score.
+### 1. Dataset Preparation
 
-These experiments emphasize the value of both traditional and deep learning methods in Natural Language Processing workflows.
+- Extract BBC News dataset.
+- Read articles from five categories.
+- Combine all articles into a single CSV file.
+- Shuffle the dataset randomly.
+
+### 2. Text Preprocessing
+
+The following preprocessing techniques were applied:
+
+- Convert text to lowercase
+- Remove URLs
+- Remove HTML tags
+- Remove numbers
+- Remove punctuation
+- Remove extra spaces
+- Tokenization
+- Stop-word removal
+- Lemmatization
+- Duplicate consecutive word removal
+
+### 3. Text Vectorization
+
+Three vectorization methods were used:
+
+- Presence/Absence Vectorization
+- Count Vectorization
+- TF-IDF Vectorization
+
+### 4. Clustering
+
+The project uses the **K-Means clustering algorithm** with:
+
+- Number of Clusters = 5
+- k-means++ initialization
+- Multiple initializations (`n_init = 20`)
+- Maximum iterations = 500
+
+### 5. Evaluation
+
+The clustering models are evaluated using the **Silhouette Coefficient**.
+
+### 6. Visualization
+
+The project includes:
+
+- Silhouette Score comparison using a Bar Chart
+- PCA Scatter Plots for cluster visualization
 
 ---
 
-## 🙋‍♀️ Author
+## 📊 Results
 
-**Sravya Togarla**  
-Data Science Learner | Edureka Certified  
-🌐 GitHub: [Sravyatogarla](https://github.com/Sravyatogarla)  
-🔗 LinkedIn: [Sravya Togarla](https://www.linkedin.com/in/sravya-togarla)
+The project successfully:
 
----
-
-## 🎓 Project Context
-
-This project was completed as part of the **Edureka Data Science with SQL Certification Course**, where we practiced hands-on learning across Python, Machine Learning, Deep Learning, NLP, and more.
+- Generated **BBCNewsArticles.csv**
+- Generated **BBCNewsArticlesClustered.csv**
+- Compared three vectorization techniques
+- Visualized clustering results
+- Evaluated clustering quality using the Silhouette Score
 
 ---
 
+## ✅ Conclusion
 
+This project demonstrates how **Unsupervised Learning** can automatically discover meaningful groups within textual data.
+
+Among the three vectorization techniques, **TF-IDF** provides a richer representation of documents by considering both word frequency and word importance across the dataset. The enhanced preprocessing pipeline and optimized K-Means configuration improved the quality and stability of clustering.
+
+---
+
+
+
+## 👩‍💻 Author
+
+**R. Hari priya**
+
+B.Tech – Computer Science and Engineering (Artificial Intelligence & Machine Learning)
+
+SRM Institute of Science and Technology – Ramapuram
+
+
+
+---
+
+## 📚 Dataset
+
+BBC News Summary Dataset (Kaggle)
+
+https://www.kaggle.com/pariza/bbc-news-summary
